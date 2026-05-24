@@ -1,0 +1,23 @@
+# ROS2
+ros2_ws_minichallenge7/build/
+ros2_ws_minichallenge7/install/
+ros2_ws_minichallenge7/log/
+
+# Python
+__pycache__/
+*.pyc
+
+# VSCode
+.vscode/
+
+# YOLO
+runs/
+
+# ROS bags
+*.db3
+*.bag
+
+# Other files
+dataset_miniChallenge7/
+MCR2_Mini_ChallengeAI.pptx
+MCR_Mini_ChallengeAI.md
