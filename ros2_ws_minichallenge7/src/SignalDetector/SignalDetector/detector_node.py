@@ -11,7 +11,7 @@ class DetectorNode(Node):
     def __init__(self):
         super().__init__('detector_senales')
         
-        self.model = YOLO('/home/skqchs/Documents/Sexto/Challenge7/my_model/my_model.pt')
+        self.model = YOLO('/home/skqchs/Documents/Sexto/Challenge7/Debloated_model/my_model.pt')
         self.bridge = CvBridge()
         self.frame_actual = None
         
@@ -36,6 +36,10 @@ class DetectorNode(Node):
         detecciones = []
         for r in results:
             for box in r.boxes:
+                confianza = round(float(box.conf), 2)
+
+                if confianza < 0.60:
+                    continue
                 clase = self.model.names[int(box.cls)]
                 confianza = round(float(box.conf), 2)
                 x1, y1, x2, y2 = [int(v) for v in box.xyxy[0].tolist()]
