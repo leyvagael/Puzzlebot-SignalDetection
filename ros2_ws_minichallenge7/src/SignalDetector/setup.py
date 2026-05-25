@@ -25,6 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
             'detector_node = SignalDetector.detector_node:main',
+            'detector_ei_node = SignalDetector.detector_edgeImpulse_node:main',
         ],
     },
 )
